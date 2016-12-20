@@ -15,7 +15,7 @@ Criará os arquivos:
 ## Códigos
 
 ### app/Category.php
-``php
+```php
 <?php
 
 namespace App;
