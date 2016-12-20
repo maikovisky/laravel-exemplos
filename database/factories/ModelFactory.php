@@ -24,8 +24,13 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Category::class, function(Faker\Generator $faker) {
 
+    if(\App\Category::count())
+        $id = (rand()%100) > 25? \App\Category::all()->random()->id : NULL;
+    else $id = NULL;
+    
     return [
-        'name' => $faker->word
+        'name' => $faker->word,
+        'parent_id' => $id
     ];
 
 });
